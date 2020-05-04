@@ -11,8 +11,9 @@ const buildMarker = function(type, coords) {
     const newMarker = document.createElement("div");
     newMarker.style.width = "32px";
     newMarker.style.height = "39px";
-    newMarker.style.backgroundImage = `url(${iconURLs[type]})`;
-    // new mapboxgl.Marker(newMarker).setLngLat(coords).addTo(map);
+    newMarker.style.backgroundImage = "url("+ iconURLs[type]+")";
+    // newMarker.style.backgroundImage = `url(+${iconURLs[type]})`;
+    return new mapbox.Marker(newMarker).setLngLat(coords);
 };
 
 module.exports = buildMarker;
